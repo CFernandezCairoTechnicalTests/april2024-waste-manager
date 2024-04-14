@@ -4,6 +4,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
 
+import java.util.function.Predicate;
+
 @Getter
 @ToString
 public class WasteCenterAuthorization {
@@ -17,4 +19,7 @@ public class WasteCenterAuthorization {
         this.authorizationNumber = authorizationNumber;
     }
 
+    public static Predicate<WasteCenterAuthorization> getCenterAuthorizationNumberPredicate(String authorizationNumber){
+        return s -> s.getAuthorizationNumber().equals(authorizationNumber);
+    }
 }

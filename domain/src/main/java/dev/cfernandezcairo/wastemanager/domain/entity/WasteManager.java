@@ -8,6 +8,7 @@ import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 @Getter
 @ToString
@@ -42,4 +43,11 @@ public class WasteManager extends Waste {
         return this.listOfWasteCenterAuthorization.remove(centerAuthorization);
     }
 
+    public static Predicate<Waste> getWasteManagerNIFPredicate(Waste wasteManager){
+        return r -> ((WasteManager) r).getNif().equals(((WasteManager) wasteManager).getNif());
+    }
+
+    public static Predicate<WasteCenterAuthorization> getCenterAuthorizationNumberPredicate(String authorizationNumber){
+        return s -> s.getAuthorizationNumber().equals(authorizationNumber);
+    }
 }
