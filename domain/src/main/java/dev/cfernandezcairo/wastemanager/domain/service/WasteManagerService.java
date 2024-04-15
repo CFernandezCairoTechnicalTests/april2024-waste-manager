@@ -2,6 +2,7 @@ package dev.cfernandezcairo.wastemanager.domain.service;
 
 import dev.cfernandezcairo.wastemanager.domain.entity.Waste;
 import dev.cfernandezcairo.wastemanager.domain.entity.WasteManager;
+import dev.cfernandezcairo.wastemanager.domain.vo.Id;
 
 import java.util.List;
 import java.util.Map;
@@ -17,7 +18,7 @@ public class WasteManagerService {
                 .collect(Collectors.<WasteManager>toList());
     }
 
-    public static WasteManager findById(Map<Long,WasteManager> managersMap, long id){
+    public static WasteManager findById(Map<Id, WasteManager> managersMap, Id id){
         return managersMap.get(id);
     }
 }
