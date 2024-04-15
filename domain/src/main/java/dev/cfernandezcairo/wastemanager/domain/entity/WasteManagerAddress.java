@@ -1,5 +1,6 @@
 package dev.cfernandezcairo.wastemanager.domain.entity;
 
+import dev.cfernandezcairo.wastemanager.domain.vo.Id;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
@@ -13,7 +14,7 @@ public class WasteManagerAddress extends Waste {
     private String direccion;
 
     @Builder
-    public WasteManagerAddress(Long id, String direccion, Boolean isEnabled) {
+    public WasteManagerAddress(Id id, String direccion, Boolean isEnabled) {
         super(id, isEnabled);
         this.direccion = direccion;
     }

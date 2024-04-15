@@ -11,14 +11,14 @@
   </parent>
 
   <groupId>dev.cfernandezcairo</groupId>
-  <artifactId>waste-manager</artifactId>
+  <artifactId>waste-manager-parent</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <modules>
     <module>domain</module>
-    <!--<module>application</module>
-    <module>framework</module>
+    <module>application</module>
+    <!--<module>framework</module>
     <module>bootstrap</module>-->
   </modules>
 
@@ -40,15 +40,15 @@
     <dependencies>
       <dependency>
         <groupId>dev.cfernandezcairo</groupId>
-        <artifactId>domain</artifactId>
-        <version>1.0-SNAPSHOT</version>
-      </dependency>
-      <!--<dependency>
-        <groupId>dev.cfernandezcairo</groupId>
-        <artifactId>application</artifactId>
+        <artifactId>waste-manager-domain</artifactId>
         <version>1.0-SNAPSHOT</version>
       </dependency>
       <dependency>
+        <groupId>dev.cfernandezcairo</groupId>
+        <artifactId>waste-manager-application</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <!--<dependency>
         <groupId>dev.cfernandezcairo</groupId>
         <artifactId>framework</artifactId>
         <version>1.0-SNAPSHOT</version>

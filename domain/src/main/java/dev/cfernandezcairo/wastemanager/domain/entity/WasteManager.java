@@ -1,12 +1,12 @@
 package dev.cfernandezcairo.wastemanager.domain.entity;
 
 import dev.cfernandezcairo.wastemanager.domain.specification.WasteEnableSpec;
+import dev.cfernandezcairo.wastemanager.domain.vo.Id;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -25,12 +25,12 @@ public class WasteManager extends Waste {
     private List<WasteCenterAuthorization> listOfWasteCenterAuthorization;
 
     @Builder
-    public WasteManager(Long id, String nombre, String nif, WasteManagerAddress wasteManagerAddress, Boolean isEnabled, List<WasteCenterAuthorization> wasteCenterAuthorizationList) {
+    public WasteManager(Id id, String nombre, String nif, WasteManagerAddress wasteManagerAddress, Boolean isEnabled, List<WasteCenterAuthorization> wasteCenterAuthorizationList) {
         super(id, isEnabled);
         this.nombre = nombre;
         this.nif = nif;
         this.wasteManagerAddress = wasteManagerAddress;
-        this.listOfWasteCenterAuthorization = new ArrayList<>(wasteCenterAuthorizationList);
+        this.listOfWasteCenterAuthorization = wasteCenterAuthorizationList;
     }
 
     public boolean addCenterAuthorizationToManager(WasteCenterAuthorization centerAuthorization) {
