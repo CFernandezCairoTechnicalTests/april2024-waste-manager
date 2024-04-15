@@ -30,7 +30,7 @@ public class WasteManager extends Waste {
         this.nombre = nombre;
         this.nif = nif;
         this.wasteManagerAddress = wasteManagerAddress;
-        this.listOfWasteCenterAuthorization = new ArrayList<>(wasteCenterAuthorizationList);
+        this.listOfWasteCenterAuthorization = wasteCenterAuthorizationList;
     }
 
     public boolean addCenterAuthorizationToManager(WasteCenterAuthorization centerAuthorization) {
