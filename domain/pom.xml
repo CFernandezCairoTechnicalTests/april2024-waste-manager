@@ -5,10 +5,10 @@
 
   <parent>
     <groupId>dev.cfernandezcairo</groupId>
-    <artifactId>waste-manager</artifactId>
+    <artifactId>waste-manager-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>domain</artifactId>
+  <artifactId>waste-manager-domain</artifactId>
 
 </project>
