@@ -1,6 +1,5 @@
 package dev.cfernandezcairo.wastemanager.domain.entity;
 
-import dev.cfernandezcairo.wastemanager.domain.vo.Id;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
@@ -11,11 +10,11 @@ import java.util.function.Predicate;
 @ToString
 public class WasteCenterAuthorization {
 
-    private Id id;
+    private Long id;
     private String authorizationNumber;
 
     @Builder
-    public WasteCenterAuthorization(Id id, String authorizationNumber) {
+    public WasteCenterAuthorization(Long id, String authorizationNumber) {
         this.id = id;
         this.authorizationNumber = authorizationNumber;
     }
