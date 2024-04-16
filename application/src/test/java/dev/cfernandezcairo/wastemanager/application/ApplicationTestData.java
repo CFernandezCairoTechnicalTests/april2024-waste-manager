@@ -10,11 +10,11 @@ import dev.cfernandezcairo.wastemanager.domain.entity.WasteCenterAuthorization;
 import dev.cfernandezcairo.wastemanager.domain.entity.WasteManager;
 import dev.cfernandezcairo.wastemanager.domain.entity.WasteManagerAddress;
 import dev.cfernandezcairo.wastemanager.domain.entity.factory.WasteFactory;
-import dev.cfernandezcairo.wastemanager.domain.vo.Id;
 import dev.cfernandezcairo.wastemanager.domain.vo.WasteType;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class ApplicationTestData {
 
@@ -46,7 +46,7 @@ public class ApplicationTestData {
         this.wasteCenterAuthorizationUseCase = new WasteManagerCenterAuthorizationInputPort();
 
         this.centerAuth = WasteCenterAuthorization.builder().
-                id(Id.withoutId()).
+                id(new Random().nextLong()).
                 authorizationNumber("authorizationNumber").
                 build();
         this.authorizations.add(centerAuth);
@@ -55,14 +55,16 @@ public class ApplicationTestData {
                 "",
                 null,
                 true,
+                null,
                 "direccion",
                 WasteType.MANAGER_ADDRESS
         );
-        this.manager = (WasteManager) WasteFactory.getWaste(Id.withId("1111"),
+        this.manager = (WasteManager) WasteFactory.getWaste(1111L,
                 "nombre",
                 "nif",
                 addressManager,
                 true,
+                null,
                 "",
                 WasteType.MANAGER
         );
@@ -71,6 +73,7 @@ public class ApplicationTestData {
                 "new nif",
                 addressManager,
                 true,
+                null,
                 "",
                 WasteType.MANAGER
         );

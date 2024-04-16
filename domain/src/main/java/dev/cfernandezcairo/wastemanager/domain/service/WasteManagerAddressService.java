@@ -1,7 +1,6 @@
 package dev.cfernandezcairo.wastemanager.domain.service;
 
 import dev.cfernandezcairo.wastemanager.domain.entity.WasteManagerAddress;
-import dev.cfernandezcairo.wastemanager.domain.vo.Id;
 
 import java.util.List;
 import java.util.Map;
@@ -17,7 +16,7 @@ public class WasteManagerAddressService {
                 .collect(Collectors.<WasteManagerAddress>toList());
     }
 
-    public static WasteManagerAddress findById(Map<Id, WasteManagerAddress> managerAddressMap, Id id){
+    public static WasteManagerAddress findById(Map<Long, WasteManagerAddress> managerAddressMap, Long id){
         return managerAddressMap.get(id);
     }
 }

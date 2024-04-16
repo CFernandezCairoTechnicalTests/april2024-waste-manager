@@ -1,7 +1,6 @@
 package dev.cfernandezcairo.wastemanager.application.usecases;
 
 import dev.cfernandezcairo.wastemanager.domain.entity.WasteManagerAddress;
-import dev.cfernandezcairo.wastemanager.domain.vo.Id;
 
 public interface WasteManagerAddressUseCase {
 
@@ -10,6 +9,8 @@ public interface WasteManagerAddressUseCase {
             String direccion
             );
 
-    WasteManagerAddress retrieveWasteManagerAddress(Id id);
+    void removeAll();
+
+    WasteManagerAddress retrieveWasteManagerAddress(Long id);
 
 }

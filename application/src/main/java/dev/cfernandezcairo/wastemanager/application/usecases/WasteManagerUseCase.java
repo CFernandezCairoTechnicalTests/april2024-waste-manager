@@ -2,7 +2,8 @@ package dev.cfernandezcairo.wastemanager.application.usecases;
 
 import dev.cfernandezcairo.wastemanager.domain.entity.WasteManager;
 import dev.cfernandezcairo.wastemanager.domain.entity.WasteManagerAddress;
-import dev.cfernandezcairo.wastemanager.domain.vo.Id;
+
+import java.util.List;
 
 public interface WasteManagerUseCase {
 
@@ -12,10 +13,18 @@ public interface WasteManagerUseCase {
             WasteManagerAddress wasteManagerAddress,
             Boolean isEnabled);
 
-    WasteManager removeWasteManager(Id id);
+    WasteManager removeWasteManager(Long id);
 
-    WasteManager retrieveWasteManager(Id id);
+    void removeAll();
+
+    WasteManager retrieveWasteManager(Long id);
+
+    List<WasteManager> retrieveAll();
 
     WasteManager persistManager(WasteManager manager);
+
+    List<WasteManager> persistAll(List<WasteManager> managers);
+
+    WasteManager updateManager(Long id, WasteManager manager);
 
 }
