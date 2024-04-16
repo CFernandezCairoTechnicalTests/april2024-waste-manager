@@ -4,7 +4,6 @@ import dev.cfernandezcairo.wastemanager.application.ports.output.WasteManagerAdd
 import dev.cfernandezcairo.wastemanager.application.usecases.WasteManagerAddressUseCase;
 import dev.cfernandezcairo.wastemanager.domain.entity.WasteManagerAddress;
 import dev.cfernandezcairo.wastemanager.domain.entity.factory.WasteFactory;
-import dev.cfernandezcairo.wastemanager.domain.vo.Id;
 import dev.cfernandezcairo.wastemanager.domain.vo.WasteType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -24,12 +23,21 @@ public class WasteManagerAddressInputPort implements WasteManagerAddressUseCase 
                 "",
                 null,
                 isEnabled,
+                null,
                 direccion,
                 WasteType.MANAGER_ADDRESS
         );
     }
 
-    public WasteManagerAddress retrieveWasteManagerAddress(Id id) {
+    /**
+     *
+     */
+    @Override
+    public void removeAll() {
+        wasteManagerAddressOutputPort.removeAll();
+    }
+
+    public WasteManagerAddress retrieveWasteManagerAddress(Long id) {
         return wasteManagerAddressOutputPort.retrieveWasteManagerAddress(id);
     }
 }

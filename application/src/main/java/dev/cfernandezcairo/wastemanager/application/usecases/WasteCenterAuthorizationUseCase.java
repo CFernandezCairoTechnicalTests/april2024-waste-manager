@@ -8,6 +8,8 @@ public interface WasteCenterAuthorizationUseCase {
     WasteCenterAuthorization createCenterAuthorization(
             String authorizationNumber);
 
+    void removeAll();
+
     WasteManager addCenterAuthorizationToManager(WasteCenterAuthorization centerAuth, WasteManager manager);
 
     WasteManager removeCenterAuthorizationFromManager(WasteCenterAuthorization centerAuth, WasteManager manager);
