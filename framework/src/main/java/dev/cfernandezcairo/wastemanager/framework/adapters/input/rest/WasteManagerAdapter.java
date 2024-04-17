@@ -35,8 +35,8 @@ public class WasteManagerAdapter {
     @Autowired
     private WasteManagerUseCase wasteManagerUseCase;
 
-    private static final Logger logger =
-            LoggerFactory.getLogger(WasteManagerAdapter.class);
+    /*private static final Logger logger =
+            LoggerFactory.getLogger(WasteManagerAdapter.class);*/
 
     private static final String ID = "Id";
     private static final String NEW_MANAGER_LOG = "New manager was created id:{}";
@@ -77,7 +77,7 @@ public class WasteManagerAdapter {
 
         final WasteManager createdManager =
                 wasteManagerUseCase.persistManager(incomingManager);
-        logger.info(NEW_MANAGER_LOG, createdManager.toString());
+        //logger.info(NEW_MANAGER_LOG, createdManager.toString());
 
         return Optional.of(createdManager)
                 .map(r -> new ResponseEntity<>(r, HttpStatus.CREATED))
@@ -121,17 +121,13 @@ public class WasteManagerAdapter {
 
         final WasteManager updatedManager =
                 wasteManagerUseCase.updateManager(id, incomingManager);
-        logger.info(MANAGER_UPDATED_LOG, updatedManager.toString());
+        //logger.info(MANAGER_UPDATED_LOG, updatedManager.toString());
 
         Optional<WasteManager> result =  updatedManager == null ? Optional.empty() : Optional.of(updatedManager);
         return result
                 .map(m -> new ResponseEntity<>(m, HttpStatus.OK))
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
-
-    /**
-     * GET /manager/retrieve/{id}
-     */
 
     @Operation(operationId = "retrieveManager",
             description = "Retrieve a manager from repository",

@@ -1,0 +1,30 @@
+springdoc:
+  swagger-ui:
+    path: '/cfernandezcairo-waste-documentation'
+    tryItOutEnabled: true
+    filter: true
+  api-docs:
+    path: '/cfernandezcairo-waste-api-docs'
+
+server:
+  port: 9999
+
+cfernandezcairo:
+  openapi:
+    dev-url: http://localhost:8080
+    prod-url: https://localhost:8081
+
+spring:
+  application:
+    name: wastemanager-service
+  cloud:
+    config:
+      enabled: true
+      uri: http://${CONFIG_HOST:host.docker.internal}:${CONFIG_PORT:8091}
+  bus:
+    enabled: true
+    destination: 'april2024.config'
+    trace:
+      enabled: true
+    refresh:
+      enabled: true

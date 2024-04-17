@@ -27,6 +27,7 @@ module framework {
     requires com.google.common;
     requires org.apache.commons.lang3;
     requires org.slf4j;
+    //requires spring.cloud.openfeign.core;
 
     exports dev.cfernandezcairo.wastemanager.framework.adapters.input.rest.data.manager; //to module spring.beans
     exports dev.cfernandezcairo.wastemanager.framework.adapters.input.rest;
