@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Configuration
 @EnableTransactionManagement
-@PropertySource("classpath:persistence-h2.properties")
+@PropertySource("classpath:application-dev.properties")
 public class PersistenceJPAConfig {
 
     @Autowired

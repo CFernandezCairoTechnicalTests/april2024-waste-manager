@@ -6,7 +6,7 @@ VOLUME /tmp
 #ADD ${artifactname}.jar app.jar
 
 ADD "./../target/*.jar" "app.jar"
-ENV JAVA_OPTS=""
+ENV JAVA_OPTS="-Dspring.profiles.active=dev"
 
 #ADD wait-for-it.sh wait-for-it.sh
 RUN sh -c 'touch /app.jar'

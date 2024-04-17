@@ -17,8 +17,8 @@ public class OpenAPIConfig {
     @Value("${cfernandezcairo.openapi.dev-url}")
     private String devUrl;
 
-    @Value("${cfernandezcairo.openapi.prod-url}")
-    private String prodUrl;
+    @Value("${cfernandezcairo.openapi.default-url}")
+    private String defaultUurl;
 
     @Bean
     public OpenAPI myOpenAPI() {
@@ -26,9 +26,9 @@ public class OpenAPIConfig {
         devServer.setUrl(devUrl);
         devServer.setDescription("Server URL in Development environment");
 
-        Server prodServer = new Server();
-        prodServer.setUrl(prodUrl);
-        prodServer.setDescription("Server URL in Production environment");
+        Server defaultServer = new Server();
+        defaultServer.setUrl(defaultUurl);
+        defaultServer.setDescription("Server Default URL environment");
 
         Contact contact = new Contact();
         contact.setEmail("cfernandezcairo@gmail.com");
@@ -44,6 +44,6 @@ public class OpenAPIConfig {
                 .description("This API exposes endpoints to manage Tech Task Services.").termsOfService("https://github.com/cfernandezcairo/terms")
                 .license(mitLicense);
 
-        return new OpenAPI().info(info).servers(List.of(devServer, prodServer));
+        return new OpenAPI().info(info).servers(List.of(devServer, defaultServer));
     }
 }
